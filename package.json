@@ -1,0 +1,21 @@
+{
+  "name": "refresh-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "depcheck": "^0.6.7",
+    "eslint": "^3.14.1",
+    "fixpack": "^2.3.1",
+    "npm-run-all": "^4.0.1",
+    "shield-studies-addon-utils": "github:mozilla/shield-studies-addon-utils#v3-shield-packet-format"
+  },
+  "dependencies": {
+    "shield-studies-addon-utils": "github:mozilla/shield-studies-addon-utils#v3-shield-packet-format"
+  }
+}

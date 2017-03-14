@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "page-reload",
+  "description": "page-reload data sent as Map(s,s).",
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/refresh_instance"
+    },
+    {
+      "$ref": "#/definitions/refresh_sequence"
+    }
+  ],
+  "definitions": {
+    "refresh_instance": {
+      "properties": {
+        "message_type": {
+          "type": "string",
+          "enum": [
+            "refresh_instance"
+          ]
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "button",
+            "shortcut"
+          ]
+        },
+        "seq_number": {
+          "type": "string"
+        },
+        "prev_delay": {
+          "type": "string"
+        },
+        "seq_uuid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message_type",
+        "hostname",
+        "method",
+        "seq_number",
+        "mean_delay",
+        "prev_delay",
+        "seq_id"
+      ]
+    }
+  },
+  "refresh_sequence": {
+    "properties": {
+      "message_type": {
+        "type": "string",
+        "enum": [
+          "refresh_sequence"
+        ]
+      },
+      "hostname": {
+        "type": "string"
+      },
+      "sequence": {
+        "type": "string"
+      },
+      "mean_delay": {
+        "type": "string"
+      },
+      "seq_length": {
+        "type": "string"
+      },
+      "median_delay": {
+        "type": "string"
+      },
+      "seq_uuid": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "message_type",
+      "hostname",
+      "seq",
+      "average_delay",
+      "seq_length",
+      "median_delay",
+      "seq_uuid"
+    ]
+  }
+}
