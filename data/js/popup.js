@@ -91,6 +91,11 @@ function updateFromBackgroundPage (bgPage) {
 //       self.port.emit('close')
 //   }, 500)
 // })
+// 
+
+document.querySelector('a.button.feedback-btn.expanded').addEventListener('click', ()=>{
+  self.port.emit('problem')
+})
 
 for (let feedbackBtn of document.querySelectorAll('.feedback-btn')) {
   feedbackBtn.addEventListener('click', function (event) {

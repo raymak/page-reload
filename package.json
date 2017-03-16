@@ -1,6 +1,6 @@
 {
-  "name": "refresh-monitor",
-  "version": "1.0.0",
+  "name": "page-reload",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
