@@ -1,0 +1,1 @@
+self.port.emit('page-title', window.document.title);
