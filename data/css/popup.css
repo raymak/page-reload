@@ -21,112 +21,98 @@ p {
 
 .panel {
   height: 100%;
+  padding: 20px 10px;
 }
 
-.main-panel,
-.feedback-panel-form {
-  padding-top: .5em;
-}
-
-.feedback-panel-form fieldset {
-  width: 100%;
-}
-
-.title {
-  font-size: 16px;
-  margin-bottom: 0;
-}
-
-.feedback-btn-row {
-  padding-top: 5.25em;
-  padding-bottom: 5.25em;
-}
-
-.panel-row {
-  padding: 0;
+.thanks-div {
+  text-align:  center;
+  white-space: nowrap;
   height: 100%;
 }
 
-.button {
-  background-color: #2EA3FF;
-  border-radius: 5px;
-}
-
-.button:focus, .button:hover {
-  background-color: #0c81dd;
-}
-
-.button.secondary {
-  background-color: #F2F2F2;
-  color: #1F1F1F;
-}
-
-.button.secondary:focus, .button.secondary:hover {
-  background-color: #dbdbdb;
-  color: #1F1F1F;
-}
-
-.toggle-label-column {
-  font-size: 13px;
-}
-
-.toggle-column {
-  text-align: right;
-}
-
-input ~ .switch-paddle {
-  border-radius: 15px;
-  background: #999999;
+.thanks-div:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
   vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
 }
 
-input:checked ~ .switch-paddle {
-  background: #4BD463;
+/* The element to be centered, can also be of any width and height */ 
+.thanks-text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
 }
 
-.switch-paddle::after {
-  border-radius: 15px;
+
+.radio-feedback {
+  padding: 0px 30px;
 }
 
-#breakage-required {
-  color: #ec5840;
+.radio-feedback label {
+  padding: 2px 0px;
+  font-size: 18px;
 }
 
-.host-report > div {
-  font-size: 13px;
-  opacity: .9;
+.radio-feedback .choice-pair {
+  padding: 4px 0px;
+  cursor: pointer;
 }
 
-.host-report-date {
-  font-weight: bold;
+.choice-pair input[type=checkbox] {
+  cursor: pointer;
 }
 
-.radio-form {
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  display: table-cell;
-  padding: 5px 10px;
-  width: 100%;
+/* radio button style from http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/ */
+
+input[type=checkbox]:not(old),
+input[type=radio]:not(old) {
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
 }
 
-.radio-form label {
-  width: 220px;
+input[type=checkbox]:not(old) + label,
+input[type=radio]:not(old) + label {
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
 }
 
-.notes-label {
-  display: block;
-  font-size: 13px;
-  line-height: 1.44em;
-  margin-bottom: .5rem;
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  border-radius    : 0.25em;
+  background       : rgb(224,224,224);
+  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : bottom;
 }
 
-.breakage {
-  margin-bottom: .5em;
-}
+/*input[type=checkbox]:not(old):checked + label > span > span{
+  display          : block;
+  width            : 100%;
+  height           : 100%;
+  margin           : 0.125em;
+  border           : 0.0625em solid rgb(115,153,77);
+  border-radius    : 0.125em;
+  background       : linear-gradient(#8CD9D9, #66C1CC) repeat scroll 0% 0% #6CC;
+}*/
 
-#notes {
-  font-size: 13px;
-  resize: none;
-  padding: 5px;
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '\2713';
+  display     : block;
+  width       : 1em;
+  color       : #30A3C9;
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(115,153,77);
+  font-weight : bold;
 }

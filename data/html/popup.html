@@ -10,94 +10,52 @@
   <body>
 
     <div id="main-panel" class="panel main-panel">
-    <!--<div class="row">
-      <div class="columns">
-        <h5 class="blocking title">Tracking Protection is enabled.<br> It is blocking tracker requests on this site.</h5>
-        <h5 class="disabled title hide">Tracking Protection is disabled.<br> Parts of this site may be tracking your activity.</h5>
-      </div>
-    </div>-->
-    <div class="row host-report-row hide">
-      <div class="columns host-report page-problem-host-report hide">
-        <div>You reported a problem with this page on<br><span class="host-report-date"></span>.</div>
-      </div>
-      <div class="columns host-report page-works-host-report hide">
-        <div>You said this page works well on<br><span class="host-report-date"></span>.</div>
-      </div>
-    </div>
-    <div class="row align-center feedback-btn-row">
-      <div class="columns">
-        <div class="blocking">
-          <a class="feedback-btn secondary expanded button" data-feedback="page-works">This page works well</a>
-          <a class="feedback-btn expanded button" data-feedback="page-problem">Report a problem</a>
-        </div>
-      </div>
-    </div>
-    <hr/>
-    <div class="row align-middle">
-     <!-- <div class="small-8 columns toggle-label-column">
-        <span class="blocking">Tracking Protection is enabled for this site.</span>
-        <span class="disabled">Tracking Protection is disabled for this site.</span>
-      </div>
-      -->
-      <!--
-      <div class="small-4 columns toggle-column">
-        <span class="switch">
-          <input class="switch-input" id="enabledSwitch" type="checkbox" name="enabledSwitch" autocomplete="off">
-          <label id="toggle-blok" class="switch-paddle" for="enabledSwitch">
-            <span class="show-for-sr">Toggle Tracking Protection</span>
-          </label>
-        </span>
-      </div>
-      -->
-    </div>
-    </div>
 
-    <div id="feedback-panel" class="panel hide">
-      <div class="row panel-row">
-        <div class="small-12 columns feedback-panel-form">
-          <div class="row">
-            <h5 class="title">We've noted the problem. <br>Thanks for letting us know.</h5>
-          </div>
-          <div class="row">
-            <p>Can you tell us more about your problem with this page?</p>
-            <fieldset>
-              <legend class="notes-label">There are problems with: <span id="breakage-required" class="hide">Required</span></legend>
-              <div class="radio-form">
-                <input class="breakage" type="radio" name="breakage" value="images" id="images">
-                <label for="images">Images</label><br>
-                <input class="breakage" type="radio" name="breakage" value="video" id="video">
-                <label for="video">Video</label><br>
-                <input class="breakage" type="radio" name="breakage" value="layout" id="layout">
-                <label for="layout">Layout</label><br>
-                <input class="breakage" type="radio" name="breakage" value="buttons" id="buttons">
-                <label for="buttons">Buttons</label><br>
-                <input class="breakage" type="radio" name="breakage" value="other" id="other">
-                <label for="other">Something else</label><br>
-              </div>
-            </fieldset>
-          </div>
-          <div class="row">
-            <a id="submit-breakage-btn" class="expanded button submit-btn">Submit</a>
-          </div>
-        </div>
+    <div class="row title">
+      <div class="columns title">
+        <h5> Can you tell us why you reloaded this page? </h4>
       </div>
     </div>
 
-    <div id="breakage-notes-panel" class="panel hide">
-      <div class="row panel-row">
-        <div class="small-12 columns feedback-panel-form">
-          <div class="row">
-            <h5 class="title">We've noted the problem. <br>Thanks for letting us know.</h5>
+    <div class="row radio-feedback">
+        <form action="">
+          <div class="choice-pair">
+            <input type="checkbox" name="fb" value="fresh-content" class="choice" data-reaction="fresh-content"/>
+            <label for="choice1"><span><span></span></span>See updated content</label><br>
           </div>
-          <div class="row">
-            <label class="notes-label">Please provide more details about the problem.</label>
-            <textarea id="notes" rows="7" maxlength="500" placeholder="500 character limit"></textarea>
+
+           <hr/>
+
+          <div class="choice-pair">
+            <input type="checkbox" name="fb" value="looked-wring" class="choice" data-reaction="looked-wrong"/>
+            <label for="choice2"><span><span></span></span>The page didn't look right</label><br>
           </div>
-          <div class="row">
-            <a id="submit-notes-btn" class="expanded button submit-btn">Submit</a>
+          <div class="choice-pair">
+            <input type="checkbox" name="fb" value="slow-page" class="choice" data-reaction="slow-page"/>
+            <label for="choice3"><span><span></span></span>The page was slow</label><br>
           </div>
-        </div>
+           <div class="choice-pair">
+            <input type="checkbox" name="fb" value="broken-vide" class="choice" data-reaction="broken-video"/>
+            <label for="choice4"><span><span></span></span>A video didn't load</label><br>
+          </div>
+
+          <hr/>
+
+          <div class="choice-pair">
+            <input type="checkbox" name="fb" value="web-dev" class="choice" data-reaction="web-dev"/>
+            <label for="choice5"><span><span></span></span>Web development</label><br>
+          </div>
+        </form>
+    </div>
+    
+    </div>
+
+    <div id="thanks-panel" class="panel hide">
+
+      <div class="thanks-div align-center">
+          <h1 class="thanks-text"> Thank You! </h1>
       </div>
+
     </div>
 
   </body>

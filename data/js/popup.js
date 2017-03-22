@@ -16,130 +16,62 @@ function hide (querySelector) {
   }
 }
 
-function showFeedbackPanel () {
-  hide('#main-panel')
-  show('#feedback-panel')
-  hide('#breakage-notes-panel')
-}
+// http://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css
 
-function showBreakageNotesPanel () {
-  hide('#main-panel')
-  hide('#feedback-panel')
-  show('#breakage-notes-panel')
-}
+function fadeOut(querySelector, duration){
+  let element = document.querySelector(querySelector);
 
-// grabbed from http://stackoverflow.com/questions/13203518/javascript-date-suffix-formatting
-// for clean date formatting
-// TODO: find an alternate solution if we ever L10N
-function ordinal (date) {
-  if (date > 20 || date < 10) {
-    switch (date % 10) {
-      case 1:
-        return 'st'
-      case 2:
-        return 'nd'
-      case 3:
-        return 'rd'
-    }
-  }
-  return 'th'
-}
-
-function showHostReport (hostReport) {
-  let date = new Date(hostReport.dateTime)
-  let hostReportDateTimeString = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ordinal(date.getDate())
-  let hostReportType = '.' + hostReport.feedback + '-host-report'
-  document.querySelector(hostReportType + ' .host-report-date').innerText = ' ' + hostReportDateTimeString
-  hide('.host-report')
-  show(hostReportType)
-  show('.host-report-row')
-}
-
-function setDisabledUI () {
-  hide('.blocking')
-  show('.disabled')
-  document.querySelector('#enabledSwitch').removeAttribute('checked')
-}
-
-function setEnabledUI () {
-  hide('.disabled')
-  show('.blocking')
-  document.querySelector('#enabledSwitch').setAttribute('checked', true)
-}
-
-function updateFromBackgroundPage (bgPage) {
-  disabled = bgPage.topFrameHostDisabled
-  if (disabled) {
-    setDisabledUI()
-  } else {
-    setEnabledUI()
-  }
-  let hostReport = bgPage.topFrameHostReport
-  if (hostReport.hasOwnProperty('feedback')) {
-    showHostReport(hostReport)
-  }
-}
-
-// document.querySelector('#toggle-blok').addEventListener('click', () => {
-//   if (disabled) {
-//     // browser.runtime.sendMessage('re-enable')
-//   } else {
-//     // browser.runtime.sendMessage('disable')
-//   }
-//   // timeout set so animation completes prior to close
-//   setTimeout(() => {
-//       self.port.emit('close')
-//   }, 500)
-// })
-// 
-
-document.querySelector('a.button.feedback-btn.expanded').addEventListener('click', ()=>{
-  self.port.emit('problem')
-})
-
-for (let feedbackBtn of document.querySelectorAll('.feedback-btn')) {
-  feedbackBtn.addEventListener('click', function (event) {
-    let feedback = event.target.dataset.feedback
-    let hostReport = {
-      'feedback': feedback,
-      'dateTime': Date.now()
-    }
-    showHostReport(hostReport)
-    // browser.runtime.sendMessage(hostReport)
-    if (feedback === 'page-problem') {
-      showFeedbackPanel()
-    } else {
-      self.port.emit('close')
-    }
-  })
-}
-
-for (let submitBtn of document.querySelectorAll('.submit-btn')) {
-  submitBtn.addEventListener('click', function (ev) {
-    if (ev.target.id === 'submit-breakage-btn') {
-      breakageChecked = document.querySelector('input.breakage:checked')
-      if (breakageChecked !== null) {
-        let message = {
-          'breakage': breakageChecked.value,
-          'notes': document.querySelector('textarea#notes').value
-        }
-        // browser.runtime.sendMessage(message)
-        showBreakageNotesPanel()
-      } else {
-        document.querySelector('#breakage-required').className = ''
+  let op = 1;  // initial opacity
+ 
+  let timer = setInterval(function () {
+      if (op <= 0.1){
+          clearInterval(timer);
+          hide(querySelector);
       }
-    } else if (ev.target.id === 'submit-notes-btn') {
-      let notes = document.querySelector('textarea#notes').value
-      if (notes !== null) {
-        let message = {
-          'breakage': breakageChecked.value,
-          'notes': notes
-        }
-        // browser.runtime.sendMessage(message)
-      }
-      self.port.emit('close')
-    }
-  })
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op -= 0.1;
+  }, duration/10);
 }
 
-// browser.runtime.getBackgroundPage(updateFromBackgroundPage)
+function fadeIn(querySelector, duration){
+  let element = document.querySelector(querySelector);
+
+  let op = 0.1;  // initial opacity
+  element.style.opacity = op;
+  show(querySelector);
+    
+  let timer = setInterval(function () {
+      if (op >= 1){
+          clearInterval(timer);
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op += 0.1;
+  }, duration/10);
+}
+
+function fadeInThanks(){
+  fadeOut('#main-panel', 200);
+  fadeIn('#thanks-panel', 500);
+
+}
+
+function showThanks(){
+  hide('#main-panel');
+  show('#thanks-panel');
+}
+
+// click listener on the choices
+for (let choice of document.querySelectorAll('.choice-pair')){
+  choice.addEventListener('click', e => {
+    let target = e.currentTarget;
+    let checkbox = target.querySelector('input[type=checkbox]');
+    checkbox.checked = true;
+    let reaction = checkbox.dataset.reaction;
+    self.port.emit('reaction', reaction);
+    fadeInThanks();
+    setTimeout(()=> self.port.emit('close'), 1000);
+    ;
+  });
+}
