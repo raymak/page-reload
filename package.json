@@ -1,13 +1,27 @@
 {
-  "name": "page-reload",
+  "name": "shield-study-page-reload",
   "version": "0.0.1",
-  "description": "",
+  "description": "In-situ feedback elicitation about page reload behavior",
   "main": "lib/index.js",
+  "author": "Kamyar Ardekani",
+  "bugs": {
+    "url": "https://github.com/raymak/page-reload/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "mozilla",
+    "firefox",
+    "page reload",
+    "webcompat"
+  ],
+  "license": "MPL-2.0",
   "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raymak/page-reload.git"
+  },
   "devDependencies": {
     "depcheck": "^0.6.7",
     "eslint": "^3.14.1",
@@ -17,5 +31,35 @@
   },
   "dependencies": {
     "shield-studies-addon-utils": "github:mozilla/shield-studies-addon-utils#v3-shield-packet-format"
-  }
+  },
+  "preferences": [
+    {
+      "name": "always_ask",
+      "type": "bool",
+      "title": "Always ask?",
+      "value": false,
+      "hidden": false
+    },
+    {
+      "name": "sequence_ask_upperbound",
+      "type": "integer",
+      "title": "Max page reloads before 100% ask probability",
+      "value": 5,
+      "hidden": true
+    },
+    {
+     "name": "session_ask_cap",
+     "type": "integer",
+     "title": "Max asks per session",
+     "value": 3,
+     "hidden": false
+    },
+    {
+     "name": "per_hostname_ask_cap",
+     "type": "integer",
+     "title": "Max asks per hostname",
+     "value": 2,
+     "hidden": false
+    }
+ ]
 }
