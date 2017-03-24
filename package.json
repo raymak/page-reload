@@ -41,6 +41,13 @@
       "hidden": false
     },
     {
+      "name": "debug",
+      "type": "bool",
+      "title": "Debug mode?",
+      "value": true,
+      "hidden": "false"
+    },
+    {
       "name": "sequence_ask_upperbound",
       "type": "integer",
       "title": "Max page reloads before 100% ask probability",
