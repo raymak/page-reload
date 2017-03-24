@@ -48,6 +48,22 @@
       "hidden": "false"
     },
     {
+      "name": "panel-type",
+      "type": "menulist",
+      "title": "Reaction panel type",
+      "value": 0,
+      "options": [
+        {
+          "value": "0",
+          "label": "Middle"
+        },
+        {
+          "value": "1",
+          "label": "Drop from URL bar"
+        }
+      ]
+    },
+    {
       "name": "sequence_ask_upperbound",
       "type": "integer",
       "title": "Max page reloads before 100% ask probability",
