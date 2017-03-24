@@ -59,14 +59,14 @@
      "type": "integer",
      "title": "Max asks per session",
      "value": 3,
-     "hidden": false
+     "hidden": true
     },
     {
      "name": "per_hostname_ask_cap",
      "type": "integer",
      "title": "Max asks per hostname",
      "value": 2,
-     "hidden": false
+     "hidden": true
     }
  ]
 }
