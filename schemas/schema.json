@@ -15,6 +15,10 @@
     }
   ],
   "definitions": {
+    "strbool": {
+      "type": "string",
+      "enum": ["true", "false"]
+    },
     "reload_instance": {
       "properties": {
         "message_type": {
@@ -39,37 +43,16 @@
         "seq_uuid": {
           "type": "string"
         },
-        "asked": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
+        "asked": {"$ref": "#/definitions/strbool"},
         "reaction": {
           "type": "string"
         },
-        "attributes_html5video": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "attributes_naiveflash": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_altKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_shiftKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_metaKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_ctrlKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        }
+        "attributes_html5video": {"$ref": "#/definitions/strbool"},
+        "attributes_naiveflash": {"$ref": "#/definitions/strbool"},
+        "mod_keys_altKey":       {"$ref": "#/definitions/strbool"},
+        "mod_keys_shiftKey":     {"$ref": "#/definitions/strbool"},
+        "mod_keys_metaKey":      {"$ref": "#/definitions/strbool"},
+        "mod_keys_ctrlKey":      {"$ref": "#/definitions/strbool"}
       },
       "required": [
         "message_type",
@@ -113,30 +96,12 @@
         "reaction": {
           "type": "string"
         },
-        "attributes_html5video": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "attributes_naiveflash": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_altKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_shiftKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_metaKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
-        "mod_keys_ctrlKey": {
-          "type": "string",
-          "enum": ["true", "false"]
-        }
+        "attributes_html5video": {"$ref": "#/definitions/strbool"},
+        "attributes_naiveflash": {"$ref": "#/definitions/strbool"},
+        "mod_keys_altKey":       {"$ref": "#/definitions/strbool"},
+        "mod_keys_shiftKey":     {"$ref": "#/definitions/strbool"},
+        "mod_keys_metaKey":      {"$ref": "#/definitions/strbool"},
+        "mod_keys_ctrlKey":      {"$ref": "#/definitions/strbool"}
       },
       "required": [
         "message_type",
@@ -171,10 +136,7 @@
         "hostname": {
           "type": "string"
         },
-        "asked": {
-          "type": "string",
-          "enum": ["true", "false"]
-        },
+        "asked": {"$ref": "#/definitions/strbool"},
         "reaction": {
           "type": "string"
         },
