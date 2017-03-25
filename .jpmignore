@@ -6,5 +6,5 @@
 {lib,data}/**/.eslintrc
 !/package.json
 !/icon.png
-!index.js
+!./index.js
 !/node_modules/shield-studies-addon-utils/**
