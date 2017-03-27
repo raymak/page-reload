@@ -51,7 +51,7 @@
       "name": "panel-type",
       "type": "menulist",
       "title": "Reaction panel type",
-      "value": 0,
+      "value": 1,
       "options": [
         {
           "value": "0",
