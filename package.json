@@ -7,9 +7,8 @@
   "bugs": {
     "url": "https://github.com/raymak/page-reload/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "updateURL": "https://people-mozilla.org/~kardekani/page-reload/test/page-reload-moz.update.rdf",
+  "updateLink": "https://people-mozilla.org/~kardekani/page-reload/test/page-reload-moz.xpi",
   "keywords": [
     "mozilla",
     "firefox",

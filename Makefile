@@ -10,7 +10,7 @@ TOP ?= $(shell pwd)
 NAME=shield-study-page-reload
 
 PEOPLEREMOTEMACHINE=people.mozilla.org
-PEOPLEREMOTEDIR=~kardekani/public_html/page-reload
+PEOPLEREMOTEDIR=~kardekani/public_html/page-reload/test
 
 WHO=kardekani@
 
