@@ -146,6 +146,9 @@
         "stats_median_delay": {
           "type": "string"
         },
+        "stats_delay_sd": {
+          "type": " string"
+        },
         "uuid": {
           "type": "string"
         }
@@ -159,6 +162,7 @@
         "reaction",
         "stats_mean_delay",
         "stats_median_delay",
+        "stats_delay_sd",
         "uuid"
       ]
     }
