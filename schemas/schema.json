@@ -15,6 +15,18 @@
     }
   ],
   "definitions": {
+    "askreactionchoice": {
+      "type": "string",
+          "enum": [
+            "fresh-content",
+            "looked-wrong",
+            "slow-page",
+            "broken-video",
+            "web-dev",
+            "no-ask",
+            "no-reaction"
+          ]
+    },
     "strbool": {
       "type": "string",
       "enum": ["true", "false"]
@@ -44,9 +56,7 @@
           "type": "string"
         },
         "asked": {"$ref": "#/definitions/strbool"},
-        "reaction": {
-          "type": "string"
-        },
+        "reaction": {"#/definitions/askreactionchoice"},
         "attributes_html5video": {"$ref": "#/definitions/strbool"},
         "attributes_naiveflash": {"$ref": "#/definitions/strbool"},
         "mod_keys_altKey":       {"$ref": "#/definitions/strbool"},
@@ -93,9 +103,7 @@
         "seq_uuid": {
           "type": "string"
         },
-        "reaction": {
-          "type": "string"
-        },
+        "reaction": {"#/definitions/askreactionchoice"},
         "attributes_html5video": {"$ref": "#/definitions/strbool"},
         "attributes_naiveflash": {"$ref": "#/definitions/strbool"},
         "mod_keys_altKey":       {"$ref": "#/definitions/strbool"},
@@ -137,9 +145,7 @@
           "type": "string"
         },
         "asked": {"$ref": "#/definitions/strbool"},
-        "reaction": {
-          "type": "string"
-        },
+        "reaction": {"#/definitions/askreactionchoice"},
         "stats_mean_delay": {
           "type": "string"
         },
