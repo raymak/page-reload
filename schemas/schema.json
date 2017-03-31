@@ -161,7 +161,7 @@
           "type": "string"
         },
         "stats_delay_sd": {
-          "type": " string"
+          "type": "string"
         },
         "uuid": {
           "type": "string"
