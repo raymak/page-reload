@@ -8,8 +8,9 @@ BUILD_ROOT_DIR = build
 BUILD_NAMES = $(sort $(notdir $(wildcard $(BUILD_ROOT_DIR)/*)))
 TOP ?= $(shell pwd)
 NAME=shield-study-page-reload
+PEOPLE_NAME=shield-study-moz
 
-PEOPLEREMOTEMACHINE=people.mozilla.org
+PEOPLEREMOTEMACHINE=moz
 PEOPLEREMOTEDIR=~kardekani/public_html/page-reload/test
 
 WHO=kardekani@
@@ -50,7 +51,7 @@ clean:
 	-rm -f *.update.rdf
 
 replace-with-signed:
-	rm -f @$(NAME)*.xpi
+	rm -f $(NAME)*.xpi
 	mv *-fx.xpi $(NAME).xpi
 
 

@@ -1,0 +1,8 @@
+node_modules/
+.*
+!.jpmignore
+!.eslintrc.json
+*.xpi
+!Makefile
+*.update.rdf
+!.gitignore
