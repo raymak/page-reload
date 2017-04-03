@@ -8,7 +8,7 @@ BUILD_ROOT_DIR = build
 BUILD_NAMES = $(sort $(notdir $(wildcard $(BUILD_ROOT_DIR)/*)))
 TOP ?= $(shell pwd)
 NAME=shield-study-page-reload
-PEOPLE_NAME=shield-study-moz
+PEOPLE_NAME=page-reload-moz
 
 PEOPLEREMOTEMACHINE=moz
 PEOPLEREMOTEDIR=~kardekani/public_html/page-reload/test
@@ -42,8 +42,8 @@ sign:
 
 people-deploy: 
 	cd $(TOP)
-	scp -rp $(NAME)*.update.rdf $(WHO)$(PEOPLEREMOTEMACHINE):$(PEOPLEREMOTEDIR)/$(NAME).update.rdf
-	scp -rp $(NAME)*.xpi $(WHO)$(PEOPLEREMOTEMACHINE):$(PEOPLEREMOTEDIR)/$(NAME).xpi
+	scp -rp $(NAME)*.update.rdf $(WHO)$(PEOPLEREMOTEMACHINE):$(PEOPLEREMOTEDIR)/$(PEOPLE_NAME).update.rdf
+	scp -rp $(NAME)*.xpi $(WHO)$(PEOPLEREMOTEMACHINE):$(PEOPLEREMOTEDIR)/$(PEOPLE_NAME).xpi
 # would be nice if then curled.
 
 clean: 
