@@ -1,6 +1,6 @@
 {
   "name": "shield-study-page-reload",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "In-situ feedback elicitation about page reload behavior",
   "main": "lib/index.js",
   "author": "Kamyar Ardekani",
