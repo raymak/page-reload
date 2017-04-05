@@ -16,3 +16,6 @@ The `page-reload` [Shield study](https://wiki.mozilla.org/Firefox/Shield/Shield_
 NOTE: in private browsing mode no data is collected
 
 The collected data is transferred through Shield [Telemetry](https://wiki.mozilla.org/Telemetry) pings to Mozilla along with the usual [environment ping](http://gecko.readthedocs.io/en/latest/toolkit/components/telemetry/telemetry/data/environment.html) data from Telemetry. 
+
+
+The schema for messages sent to Telemetry can be found [here](https://github.com/raymak/page-reload/blob/master/schemas/schema.json).
