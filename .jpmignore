@@ -8,8 +8,10 @@
 !/icon.png
 !./index.js
 !schemas/*
+schemas/.*
 !/node_modules/shield-studies-addon-utils/**
 !/node_modules/ajv/**
 !/node_modules/shield-study-schemas/**
-node_modules/shield-studies-addon-utils/**/.DS_Store
-/node_modules/ajv/**/.DS_Store
+/node_modules/shield-studies-addon-utils/**/.*
+/node_modules/ajv/**/.*
+/node_modules/shield-study-schemas/**/.*
