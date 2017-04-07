@@ -1,9 +1,3 @@
-let disabled = false
-let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-let breakageChecked = null
-
 function show (querySelector) {
   for (let element of document.querySelectorAll(querySelector)) {
     element.classList.remove('hide')
@@ -29,7 +23,7 @@ function fadeOut(querySelector, duration){
           hide(querySelector);
       }
       element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      element.style.filter = `alpha(opacity=${op * 100})`;
       op -= 0.1;
   }, duration/10);
 }
@@ -46,7 +40,7 @@ function fadeIn(querySelector, duration){
           clearInterval(timer);
       }
       element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      element.style.filter = `alpha(opacity=${op * 100})`;
       op += 0.1;
   }, duration/10);
 }
@@ -57,14 +51,9 @@ function fadeInThanks(){
 
 }
 
-function showThanks(){
-  hide('#main-panel');
-  show('#thanks-panel');
-}
-
 // click listener on the choices
 for (let choice of document.querySelectorAll('.choice-pair')){
-  choice.addEventListener('click', e => {
+  choice.addEventListener('click', (e) => {
     let target = e.currentTarget;
     let checkbox = target.querySelector('input[type=checkbox]');
     checkbox.checked = true;
@@ -72,7 +61,6 @@ for (let choice of document.querySelectorAll('.choice-pair')){
     self.port.emit('reaction', reaction);
     fadeInThanks();
     setTimeout(()=> self.port.emit('close'), 1000);
-    ;
   });
 }
 
