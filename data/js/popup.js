@@ -75,3 +75,6 @@ for (let choice of document.querySelectorAll('.choice-pair')){
     ;
   });
 }
+
+// listener for learn more
+document.querySelector('.btn.more').addEventListener('click', ()=>{self.port.emit('more')});
