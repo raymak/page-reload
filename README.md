@@ -1,14 +1,14 @@
 # Page Reload Study
-```page-reload``` is the add-on for a [Shield study](https://wiki.mozilla.org/Firefox/Shield/Shield_Studies) aimed at understanding the feasibility and effectiveness of predicting page breakage from users' page reload behavior and feedback. This could eventually help report broken websites automatically and improve the web compatibility of Firefox.
+`page-reload` is the Firefox add-on used for a [Shield study](https://wiki.mozilla.org/Firefox/Shield/Shield_Studies) aimed at understanding the feasibility and effectiveness of predicting page breakage from users' page reload behavior and feedback. This could eventually help report broken websites automatically and improve the web compatibility of Firefox.
 
 ## Hypothesis
 The number of page reloads for a page paired with the hostname of that page gives a significant prediction power of page breakage.
 
 ## Task
-When the user reloads a webpage, the page-reload addon prompts her with a certain chance. The prompt asks the user about why she reloaded that page. See picture below.
+When the user reloads a webpage, the addon prompts her with a certain chance. The prompt asks the user about why she reloaded that page. See picture below.
 
 <div align="center">
-    <img alt="The prompt asking the user about why she reloaded a web page." src="https://people-mozilla.org/~kardekani/page-reload/screenshots/browser-ss.png" height="450px"/>
+    <img alt="The prompt asking the user about why she reloaded a web page." src="https://people-mozilla.org/~kardekani/page-reload/screenshots/browser-ss.png" height="400px"/>
 </div>
 
 ## Data Collection
