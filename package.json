@@ -27,10 +27,10 @@
     "eslint": "^3.14.1",
     "fixpack": "^2.3.1",
     "npm-run-all": "^4.0.1",
-    "shield-studies-addon-utils": "github:mozilla/shield-studies-addon-utils#v3-shield-packet-format"
+    "shield-studies-addon-utils": "git://github.com/mozilla/shield-studies-addon-utils.git#v3-shield-packet-format"
   },
   "dependencies": {
-    "shield-studies-addon-utils": "github:mozilla/shield-studies-addon-utils#v3-shield-packet-format"
+    "shield-studies-addon-utils": "git://github.com/mozilla/shield-studies-addon-utils.git#v3-shield-packet-format"
   },
   "preferences": [
     {
