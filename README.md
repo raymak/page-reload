@@ -22,7 +22,19 @@ The `page-reload` [Shield study](https://wiki.mozilla.org/Firefox/Shield/Shield_
 
 NOTE: in private browsing mode no data is collected
 
-The collected data is transferred through Shield [Telemetry](https://wiki.mozilla.org/Telemetry) pings to Mozilla along with the usual [environment ping](http://gecko.readthedocs.io/en/latest/toolkit/components/telemetry/telemetry/data/environment.html) data from Telemetry. 
+The collected data is transferred through Shield [Telemetry](https://wiki.mozilla.org/T\elemetry) pings to Mozilla along with the usual [environment ping](http://gecko.readthedocs.io/en/latest/toolkit/components/telemetry/telemetry/data/environment.html) data from Telemetry. 
 
 
 The schema for messages sent to Telemetry can be found [here](https://github.com/raymak/page-reload/blob/master/schemas/schema.json).
+
+## Addon Development
+To run and build the addon from source code, you need to install the `jpm` command-line tool and the addon's development dependencies:
+```
+npm install -g jpm
+npm install
+```
+
+You can then run the addon:
+```jpm run -b /path/to/Firefox/binary/```
+or build it into an xpi package:
+```jpm run xpi```
